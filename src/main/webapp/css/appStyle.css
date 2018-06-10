@@ -1,0 +1,179 @@
+
+html{
+    width: 1240px;
+    margin: 0px auto;
+}
+
+/* .test{
+    border: 1px pink solid;
+} */
+
+/* <!-- navbar --> */
+.nav-full {
+   border-radius: 0px;
+   
+}
+
+.navbar{
+    margin-bottom: 0px;
+}
+
+
+
+
+/* <!-- background --> */
+#mbbackground{
+	height: 100%;
+    background: url("../image/background/nick-hillier-254650-unsplash.jpg");
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    
+    
+}
+
+/* <!-- break --> */
+/* .break{ */
+/*     height: 30px; */
+/*     background: #333; */
+/* } */
+
+
+
+/* <!-- slider --> */
+.list-group{
+    width: 220px; 
+    height: 80ps;
+    padding-left: 0px;
+    /* padding-top: 200px; */
+    margin-top: 300px;
+    margin-left: 30PX;
+    opacity: 0.8;
+    position: fixed;
+}
+.list-group-item{
+    text-align: center;
+    
+}
+/* memberFoto */
+.memberFoto{
+    margin-top: 20px;
+}
+.fotoInfo{
+    position: fixed;
+}
+.fotoCase{
+    margin-left: 200px;
+    margin-top: 50px;
+    border-radius: 50%;
+    border: 2px solid #aaa;
+}
+.fotoCase img{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 2px solid #aaa; 
+}
+.separateLine{
+    width: 2px;
+    height: 500px;
+    margin-left: 275px;
+    border-left: 2px solid;
+    border-color: #c1c1c1;
+    margin-top: 50px;
+}
+/* <!-- memberName --> */
+.name{
+    color: #fff;
+    font: 100px Tahoma;
+    margin-left: 400px;
+    margin-top: 30px;
+    position: fixed;
+}
+/* <!-- TvWall --> */
+
+.infoWall{
+    width: 600px;
+    height: 400px;
+    border: 2px solid #ccc;
+    margin-left: 450px;
+    margin-top: 200px;
+    background: #fff;
+    border-radius: 3%;
+    opacity: 0.9;
+    
+}
+  
+
+/* <!-- copyright --> */
+
+/* ================================== */
+/* 1024 */
+@media only screen and (max-width: 1024px) {
+    html{
+        width: 100%;
+        margin: 0px auto;
+    }
+
+}
+/* ================================== */
+/* 768 */
+@media only screen and (max-width: 768px) {
+    .title{
+        font-size: 50px;
+        
+    }
+    .subTitle{
+        width: 300px;
+        font-size: 10px;
+        text-align: center;
+        color: aliceblue;
+        border-bottom: 1px solid;
+        margin: 0 auto;   
+    }
+    .mainBanner{
+        padding: 50px;
+    
+    }
+    .list-group{
+        width: 150px;
+        /* padding-top: 200px; */
+        margin-top: 200PX;
+        margin-left: 10PX;
+        text-align: center;
+    }
+    
+}
+/* ================================== */
+/* 320 */
+@media only screen and (max-width: 320px) {
+    .title{
+        font-size: 30px;
+        
+    }
+    .mainBanner{
+        padding: 30px;
+    }
+    .subTitle{
+        width: 200px;
+        font-size: 10px;
+        text-align: center;
+        color: aliceblue;
+        border-bottom: 1px solid;
+        margin: 0 auto;   
+    }
+    .appForm{
+        width: 80%;
+        margin: auto;
+        text-align: center;
+        color: aliceblue;
+        margin-top: 30px;
+    }
+    .list-group{
+        width: 100px;
+        /* padding-top: 200px; */
+        margin-top: 200PX;
+        margin-left: 10PX;
+        text-align: center;
+    }
+}
