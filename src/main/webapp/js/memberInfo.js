@@ -1,7 +1,7 @@
 $(document).ready(function () {
     // <!-- infomation -->
-    $('.sidebarInfo').click(function () {
-        alert('123');
+    // $('.sidebarInfo').click(function () {
+    //     alert('123');
         // $.getJSON("/Food//MemberServlet", {
         //     userAccount: 'taipeitec00801@gmail.com'
         // }, function (data) {
@@ -48,7 +48,7 @@ $(document).ready(function () {
 					'<button type="button" class="btn btn-default">Update Account</button>' +
 				'</div>' +
                 '</div>');
-            });
+            // });
     // });
 
 
