@@ -14,7 +14,6 @@
 		<link rel="stylesheet" href="../css/bootstrap.min.css">
 		<link rel="stylesheet" href="../css/animate.css">
 		<link rel="stylesheet" href="../css/appStyle.2.css">
-		<link rel="stylesheet" href="../css/prettyPhoto.css">
 		<link rel="stylesheet" href="../css/facebox.css">
 
 
@@ -23,27 +22,13 @@
 		<!-- <script src="../js/jquery-1.6.1.min.js"></script> -->
 		<script src="../js/jquery-3.2.1.min.js"></script>
 		<!-- <script src="../js/js1/jquery.min.js"></script> -->
-		<script src="../js/js1/jquery.prettyPhoto.js"></script>
 		<script src="../js/facebox.js"></script>
 		<script src="../js/bootstrap.min.js"></script>
 		<script src="../js/wow.min.js"></script>
 		<script src="../js/memberInfo.js"></script>
-		<script src="../js/jquery.prettyPhoto.js"></script>
 
 		<title>MemberInfo</title>
-		<script>
-			$(document).ready(function () {
-				// $('.facebox').facebox({
-				//     loadingImage : 'images/loading.gif',
-				//     closeImage   : 'images/closelabel.png',
-				// });
-				$.facebox.settings.loadingImage = 'images/loading.gif';
-				$.facebox.settings.closeImage =
-					'images/closelabel.png'
-				$('.facebox').facebox();
 
-			});
-		</script>
 
 	</head>
 
@@ -207,39 +192,108 @@
 						<H2>管理相片</H2>
 					</div>
 				</div>
+				<div class="imgForm ">
 
-				<div>
-					<div class="row">
-						<div class="col-xs-6 col-md-3 ">
-							<a href="../image/background/drew-coffman-94401-unsplash.jpg" class="thumbnail nino-prettyPhoto facebox">
-								<img src="../image/background/drew-coffman-94401-unsplash.jpg" class='imageCase' alt="...">
-							</a>
-						</div>
+					<div class="col-xs-6 col-md-3 ">
+						<a href="../image/background/drew-coffman-94401-unsplash.jpg" class="thumbnail nino-prettyPhoto facebox">
+							<img src="../image/background/drew-coffman-94401-unsplash.jpg" class='imageCase' alt="...">
+						</a>
 					</div>
-				</div>
-				<div>
-					<div class="row">
-						<div class="col-xs-6 col-md-3 ">
-							<a href="../image/member/pablo-heimplatz-243278-unsplash2.jpg" class="thumbnail nino-prettyPhoto facebox">
-								<img src="../image/member/pablo-heimplatz-243278-unsplash2.jpg" class='imageCase' alt="...">
-							</a>
-						</div>
+
+
+					<div class="col-xs-6 col-md-3 ">
+						<a href="../image/member/pablo-heimplatz-243278-unsplash2.jpg" class="thumbnail nino-prettyPhoto facebox">
+							<img src="../image/member/pablo-heimplatz-243278-unsplash2.jpg" class='imageCase' alt="...">
+						</a>
 					</div>
+
 				</div>
-
-
-				<!-- message history -->
-
 			</div>
+			<!-- <div id="facebox" style="display:none;"> 
+					<div class="popup"> 
+			<div class="content">
+					<img src="../image/arrow_left.gif" class='imageCase' alt="...">
+					<img src="../image/arrow_right.gif" class='imageCase' alt="...">
+			</div> 
+		</div>
+	</div> -->
+			<!-- message history -->
+
+		</div>
 
 		</div>
 		<script>
 			$(document).ready(function () {
-				$.facebox.settings.loadingImage = '../image/loading.gif';
-				$.facebox.settings.closeImage =
-					'../image/closelabel.png'
-				$('.facebox').facebox(function (){
-					
+
+				$.facebox.settings.loadingImage = '../image/loading.gif',
+					$.facebox.settings.closeImage =
+					'../image/closelabel.png',
+
+					$('.facebox').facebox();
+
+			});
+		</script>
+		<script>	
+
+			// alert('thisImg');
+			$(".thumbnail").on("click", function () {
+				// $("#facebox").facebox("option", "height", (height * 0.95));
+				var imgSrc = $(this).children().attr("src");
+				var thisImg = $(this).parent('div');
+
+				$('.popup').html(
+					'<img src="../image/arrow_left.gif" id="leftDiv" alt="...">'
+					+ '<img src="../image/arrow_right.gif" id="rightDiv" alt="...">'
+					+ '<div class="content">'
+					+ '</div>'
+				);
+				$(".content").on("click", function () {
+					if ($(thisImg).is("div")) {
+						alert('true1');
+						nextImg = $(thisImg).next().find('img').attr("src");
+						alert(nextImg);
+						thisImg = $(thisImg).next();
+						$(".content").find('img').attr("src", nextImg);
+					} else {
+						alert("END");
+					}
+
+				});
+				$("#rightDiv").click(function () {
+					alert('true2');
+					if ($(thisImg).is("div")) {
+						alert('true3');
+						nextImg = $(thisImg).next().find('img').attr("src");
+						if (nextImg != undefined) {
+							alert(nextImg);
+							thisImg = $(thisImg).next();
+							$(".content").find('img').attr("src", nextImg);
+						} else {
+							alert(nextImg);
+							$('.facebox').trigger('close.facebox');
+						}
+
+					}
+
+				});
+				$("#leftDiv").on("click", function () {
+					alert('true4');
+					if ($(thisImg).is("div")) {
+						alert('true5');
+						nextImg = $(thisImg).prev().find('img').attr("src");
+
+						if (nextImg != undefined) {
+							alert(nextImg);
+							thisImg = $(thisImg).prev();
+							$(".content").find('img').attr("src", nextImg);
+						} else {
+							alert(nextImg);
+							$('.facebox').trigger('close.facebox');
+						}
+
+					}
+
+
 				});
 			});
 		</script>
