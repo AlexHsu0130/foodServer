@@ -104,21 +104,11 @@ public class MemberServlet extends HttpServlet {
 	public void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		String userAccount = request.getParameter("userAccount");
-//		if(userAccount != null) {
-//			try {
-//				userAccount = Integer.parseInt(userAccount.trim());
-//			} catch (Exception e) {
-//				e.printStackTrace();
-//			}
-//			Member mem = new Member();
-//			mem.setUserAccount(userAccount.trim());
 			MemberDaoMySqlImpl mInfo = new MemberDaoMySqlImpl();
 			Member member = mInfo.getUserDateNoPortrait(userAccount.trim());
 			Gson gson =new Gson();
 			String data = gson.toJson(member);
 			response.setContentType("appliction/json; charset=UTF8");
-
-			
 			try(
 				PrintWriter out = response.getWriter();	
 			) {
