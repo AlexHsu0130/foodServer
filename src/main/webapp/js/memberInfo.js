@@ -1,5 +1,6 @@
 $(document).ready(function () {
     // <!-- infomation -->
+    //===========連結資料庫後解開註解=============
     // $('.sidebarInfo').click(function () {
     //     alert('123');
     // $.getJSON("/Food//MemberServlet", {
@@ -50,13 +51,20 @@ $(document).ready(function () {
     //     '</div>');
     // });
     // });
+    
+    
     // ===========照片特效==============
 
-    // alert('thisImg');
-    $(".thumbnail").on("click", function () {
+   
+    $('.facebox').on("click", function () {
+       
+        // $.facebox.settings.loadingImage = '../image/loading.gif',
+		// 			$.facebox.settings.closeImage =
+		// 			'../image/closelabel.png',
+        
         var imgSrc = $(this).children().attr("src");
         var thisImg = $(this).parent('div');
-
+        alert(imgSrc );
         $('.popup').html(
             '<img src="../image/arrow_left.gif" id="leftDiv" alt="...">'
             + '<img src="../image/arrow_right.gif" id="rightDiv" alt="...">'

@@ -1,5 +1,7 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-	<html>
+<html>
 
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -8,10 +10,10 @@
 
 
 		<!-- ============================ -->
-		<link rel="stylesheet" href="../css/bootstrap.min.css">
-		<link rel="stylesheet" href="../css/animate.css">
-		<link rel="stylesheet" href="../css/facebox.css">
-		<link rel="stylesheet" href="../css/appStyle.2.css">
+		<link rel="stylesheet" href="../css/bootstrap.min.css" charset="UTF-8">
+		<link rel="stylesheet" href="../css/animate.css" charset="UTF-8">
+		<link rel="stylesheet" href="../css/facebox.css" charset="UTF-8">
+		<link rel="stylesheet" href="../css/appStyle.2.css" charset="UTF-8">
 
 
 		<!-- =============================================== -->
@@ -24,7 +26,7 @@
 		<script src="../js/facebox.js"></script>
 		<script src="../js/memberJS.js"></script> 
 		<title>MemberInfo</title>
- 
+
 
 	</head>
 

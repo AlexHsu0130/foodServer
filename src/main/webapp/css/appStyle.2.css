@@ -1,20 +1,25 @@
 
 html{
-    margin: 0px auto;
+    margin: 0 auto;
+    width: 75%;
+    
 }
 
 .test{
-    border: 1px pink solid;
+    border: 1px #ffc0cb solid;
 }
 
 /* <!-- navbar --> */
 .nav-full {
    border-radius: 0px;
-   position: fixed;
+  
 }
 
 .navbar{
     margin-bottom: 0px;
+    margin-left: auto;
+    margin-right: auto;
+    position: fixed;
 }
 /* <!-- sidebar --> */
 .sidebar{
@@ -171,19 +176,14 @@ html{
 /* ================================== */
 /* 1024 */
 @media only screen and (max-width: 1024px) {
-    html{
-        width: 100%;
-        margin: 0px auto;
-    }
+  
 
 }
 /* ================================== */
 /* ================================== */
 /* 990 */
 @media only screen and (max-width: 1024px) {
-    .imgbox{
-       
-    }
+    
 
 }
 /* ================================== */

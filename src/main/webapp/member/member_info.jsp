@@ -94,22 +94,42 @@
 	
 	/* var  username = '<s:property value="%{user.username}"/>'; */
 	
-		$('.personalInfo').click(function() {
-			/* alert('hi'); */
-			$.getJSON("/Food//MemberServlet", {
-				userAccount : 'taipeitec00801@gmail.com'
-			}, function(data) {
-				/* alert('hi');
-				alert(data); */
-				$('.infoWall').html('<p>'+ data.memberId +'</p><br>'+
-						'<p >'+ data.userPassword +'</p><br>'+
-						'<p>'+ data.birthday +'</p><br>'+
-						'<p>'+ data.nickName +'</p><br>'+
-						'<p>'+ data.gender +'</p><br>'+
-						'<p>'+ data.userRank +'</p><br>'+
-						'<p>'+ data.preference +'</p><br>'+'</div>');
+		// $('.personalInfo').click(function() {
+		// 	/* alert('hi'); */
+		// 	$.getJSON("/Food//MemberServlet", {
+		// 		userAccount : 'taipeitec00801@gmail.com'
+		// 	}, function(data) {
+		// 		/* alert('hi');
+		// 		alert(data); */
+		// 		$('.infoWall').html('<p>'+ data.memberId +'</p><br>'+
+		// 				'<p >'+ data.userPassword +'</p><br>'+
+		// 				'<p>'+ data.birthday +'</p><br>'+
+		// 				'<p>'+ data.nickName +'</p><br>'+
+		// 				'<p>'+ data.gender +'</p><br>'+
+		// 				'<p>'+ data.userRank +'</p><br>'+
+		// 				'<p>'+ data.preference +'</p><br>'+'</div>');
+		// 	});
+		// });
+		$('.personalInfo').click(function(){
+				$.ajax({
+					url : '/foodSrverSH/_02_login/login.do',
+					type : 'POST',
+					data : {
+						userAccount : 'taipeitec00801@gmail.com'
+					},
+					dataType : 'json', //text,json,xml
+					success : function(data) {
+						$('.infoWall').html('<p>'+ data.memberId +'</p><br>'+
+								'<p >'+ data.userPassword +'</p><br>'+
+								'<p>'+ data.birthday +'</p><br>'+
+								'<p>'+ data.nickName +'</p><br>'+
+								'<p>'+ data.gender +'</p><br>'+
+								'<p>'+ data.userRank +'</p><br>'+
+								'<p>'+ data.preference +'</p><br>'+'</div>');
+					}
+					
+				});
 			});
-		});
 	</script>
 	 <script>
               new WOW().init();
