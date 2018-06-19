@@ -26,9 +26,10 @@ html{
     height: 500px;
     width: 200px;
     margin-top: 100px;
-    margin-left: 5px;
+    margin-left: 20px;
     font-size: 20px;
     position: fixed;
+    
 }
 .sidebar a{
     color: #aaa;
@@ -37,14 +38,16 @@ html{
 /* infomation   */
 .infomation{
     /* height: 80%; */
-    margin-top:130px;
+    margin-top:100px;
     margin-left: 250px; 
     position: absolute;
 }
 .taitle{
     font-size: 18px;
     color: #333;
-    padding-left: 70px;
+    margin-left: 130px;
+
+padding-bottom: 25px;
 }
 .fotoSetting{
     width: 200px;
@@ -76,7 +79,6 @@ html{
 }
 .nameAndEmail{
     width: 400px;
-    height: 100px;
     margin-left: 400px;
     font-size: 16px;
     margin-top: -180px;
@@ -85,18 +87,15 @@ html{
     margin-bottom: 15px;     
 }
 .memIntroduce {
-    margin-left: -250px;
-   width: 500px;
+    margin-left: -270px;
+   width: 530px;
 } 
 .memIntroduce textarea{
     width: 500px;
     height: 100px;
     border-radius: 3px;
 }
-.btChange{
-   margin-left: 200px;
-    margin-top: 350px;
-}
+
 .btChange button{
     width: 500px;
     background: #333;
