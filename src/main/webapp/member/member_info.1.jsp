@@ -109,7 +109,7 @@
 					<div class="btSetting">
 						<div class="btn-group" role="group" aria-label="...">
 							<button type="button" class="btn btn-default" 
-							onclick="window.location='/foodSrverSH/member/member_setting.jsp'">Setting</button>
+							onclick="window.location='/foodGit/member/member_setting.jsp'">Setting</button>
 						</div>
 					</div>
 				</div>
