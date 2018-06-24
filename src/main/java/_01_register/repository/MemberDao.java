@@ -15,4 +15,7 @@ public interface MemberDao {
 	byte[] getPortrait(String userAccount);	
 	
 	MemberBean getUserDateNoPortrait(String userAccount);
+
+	MemberBean checkACPassword(String userPassword);
+
 }

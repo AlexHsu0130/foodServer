@@ -37,7 +37,7 @@
 		<property name="hbm2ddl.auto">create</property>
 		<!-- 對應資料表 ，所有的Persistent類別都需要定義一個Mapping檔 -->
 		<mapping class="_01_register.model.MemberBean"></mapping>
-
+		<mapping class="_01_register.model.Store"></mapping>
 
 	</session-factory>
 </hibernate-configuration>

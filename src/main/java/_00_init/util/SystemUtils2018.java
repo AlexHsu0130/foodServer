@@ -18,17 +18,31 @@ import javax.sql.rowset.serial.SerialBlob;
 import javax.sql.rowset.serial.SerialClob;
 
 public class SystemUtils2018 {
-
+	
 	public static Blob fileToBlob(String imageFileName) throws IOException, SQLException {
+		System.out.println(imageFileName);
 		File imageFile = new File(imageFileName);
 		long size = imageFile.length();
 		byte[] b = new byte[(int) size];
 		SerialBlob sb = null;
+		FileInputStream s = null;
 		try (FileInputStream fis = new FileInputStream(imageFile);) {
+			s = fis;
 			fis.read(b);
 			sb = new SerialBlob(b);
+		}catch (Exception e) {
+			return sb;
 		}
 		return sb;
+	}
+	public static Clob stringToClob(String string) throws IOException, SQLException {
+		Clob clob = null;
+		if (string.equals(0)) {
+			string = "";
+			char[] ca = string.toCharArray();
+			clob = new SerialClob(ca);
+		}	
+		return clob;			
 	}
 
 	public static Clob fileToClob(String textFileName) throws IOException, SQLException {
