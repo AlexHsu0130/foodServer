@@ -16,6 +16,6 @@ public interface MemberDao {
 	
 	MemberBean getUserDateNoPortrait(String userAccount);
 
-	MemberBean checkACPassword(String userPassword);
+	MemberBean checkACPassword(String userAccount, String userPassword);
 
 }

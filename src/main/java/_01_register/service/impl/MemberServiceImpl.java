@@ -56,9 +56,9 @@ public class MemberServiceImpl implements MemberService {
 	}
 
 	@Override
-	public MemberBean checkACPassword(String userPassword) {
+	public MemberBean checkACPassword(String userAccount, String userPassword) {
 		
-		return dao.checkACPassword(userPassword);
+		return dao.checkACPassword(userAccount ,userPassword);
 	}
 	
 	

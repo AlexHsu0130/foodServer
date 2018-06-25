@@ -43,7 +43,9 @@ public class EDMTableResetHibernate {
 					member.setUserAccount(sa[0]);
 					member.setUserPassword(GlobalService.getMD5Endocing(GlobalService.encryptString(sa[1])));
 					member.setNickName(sa[2]);
-					member.setBirthday(Date.valueOf(sa[3]));
+//					member.setBirthday(Date.valueOf(sa[3]));
+					//MemberBeane的Birthday資料型態Date改成String
+					member.setBirthday(sa[3]);
 					member.setGender(Integer.valueOf(Integer.parseInt(sa[4])));
 					member.setUserRank(Integer.valueOf(Integer.parseInt(sa[5])));
 					Blob sb = SystemUtils2018.fileToBlob(sa[6]);

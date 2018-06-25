@@ -1,62 +1,63 @@
 $(document).ready(function () {
 	// alert($('.infomation').children()!='div');
 	// 載入會員資料
-	// if($('.infomation').children()!='div'){
-	// 	$('.infomation').html(
-	// 		'<div class="taitle test">' +
-	// 		'<H2>基本資料</H2>' +
-	// 		'</div>' +
+	if($('.infomation').children()!='div'){
+		$('.infomation').html(
+			'<div class="taitle test">' +
+			'<H2>基本資料</H2>' +
+			'</div>' +
 
-	// 		'<div class="fotoSetting test">' +
-	// 		'<div class="fotoCase test">' +
-	// 		'<img src="../image/member/liam-stahnke-261528-unsplash.jpg" alt="...">' +
-	// 		'</div>' +
-	// 		'<div class="fsWord test">' +
-	// 		'<a href="#">更改頭像</a>' +
-	// 		'</div>' +
-	// 		'</div>' +
-	// 		'<div class="nameAndEmail test">' +
-	// 		'<div class="memberId test">' +
-	// 		'<p>帳號</p>' +
-
-
-	// 		'<input type="text" class="form-control"' + 'placeholder="memberId"' + 'aria-describedby="sizing-addon1">' +
-	// 		'</div>' +
-
-	// 		'<div class="nickName test">' +
-	// 		'<p>姓名</p>' +
+			'<div class="fotoSetting test">' +
+			'<div class="fotoCase test">' +
+			'<img src="../image/member/liam-stahnke-261528-unsplash.jpg" alt="...">' +
+			'</div>' +
+			'<div class="fsWord test">' +
+			'<a href="#">更改頭像</a>' +
+			'</div>' +
+			'</div>' +
+			'<div class="nameAndEmail test">' +
+			'<div class="memberId test">' +
+			'<p>帳號</p>' +
 
 
-	// 		'<input type="text" class="form-control"' + 'placeholder="nickName"' + 'aria-describedby="sizing-addon1">' +
-	// 		'</div>' +
-	// 		'<div class="birthday test">' +
-	// 		'<p>生日</p>' +
+			'<input type="text" class="form-control"' + 'placeholder="memberId"' + 'aria-describedby="sizing-addon1">' +
+			'</div>' +
+
+			'<div class="nickName test">' +
+			'<p>姓名</p>' +
 
 
-	// 		'<input type="text" class="form-control"' + 'placeholder="birthday"' + 'aria-describedby="sizing-addon1">' +
-	// 		'</div>' +
-	// 		'<div class="memIntroduce test">' +
-	// 		'<p>關於我 :</p>' +
+			'<input type="text" class="form-control"' + 'placeholder="nickName"' + 'aria-describedby="sizing-addon1">' +
+			'</div>' +
+			'<div class="birthday test">' +
+			'<p>生日</p>' +
 
-	// 		'<textarea name="talk" cols="25"' + 'rows="3"></textarea>' +
-	// 		'<hr>' +
 
-	// 		'</div>' +
+			'<input type="text" class="form-control"' + 'placeholder="birthday"' + 'aria-describedby="sizing-addon1">' +
+			'</div>' +
+			'<div class="memIntroduce test">' +
+			'<p>關於我 :</p>' +
 
-	// 		'</div>' +
-	// 		'<div class="btChange btn-group test"' + 'role="group">' +
-	// 		'<button type="button" class="btn' + 'btn-default">Update Account</button>' +
-	// 		'</div>');
-	// }
+			'<textarea name="talk" id="textTalk" cols="25"' + 'rows="3"></textarea>' +
+			'<hr>' +
+
+			'</div>' +
+
+			'</div>' +
+			'<div class="btChange btn-group test"' + 'role="group">' +
+			'<button type="button" class="btn' + 'btn-default">Update Account</button>' +
+			'</div>');
+	}
 	$('.sidebarInfo').click(function () {
 		$.ajax({
 			url: '/foodGit/_02_login/login.do',
 			type: 'POST',
 			data: {
-				userAccount: 'hikarumiyasaki@gmail.com'
+				userAccount: 'mark1234549@gmail.com'
 			},
 			dataType: 'json', //text,json,xml
 			success: function (data) {
+				alert(data.birthday);
 				$('.infomation').html(
 					'<div class="taitle test">' +
 					'<H2>基本資料</H2>' +
@@ -79,21 +80,21 @@ $(document).ready(function () {
 					'</div>' +
 
 					'<div class="nickName test">' +
-					'<p>姓名</p>' +
+					'<p>暱稱</p>' +
 
 
-					'<input type="text" class="form-control"' + 'placeholder="nickName"' + 'aria-describedby="sizing-addon1" value=' + data.nickName + '>' +
+					'<input type="text" id="nickName" class="form-control"' + 'placeholder="nickName"' + 'aria-describedby="sizing-addon1" value=' + data.nickName + '>' +
 					'</div>' +
 					'<div class="birthday test">' +
 					'<p>生日</p>' +
 
 
-					'<input type="text" class="form-control"' + 'placeholder="birthday"' + 'aria-describedby="sizing-addon1" value=' + data.birthday + '>' +
+					'<input type="text" id="birthday" class="form-control"' + 'placeholder="birthday"' + 'aria-describedby="sizing-addon1" value=' + data.birthday + '>' +
 					'</div>' +
 					'<div class="memIntroduce test">' +
 					'<p>關於我 :</p>' +
 
-					'<textarea name="talk" cols="25"' + 'rows="3"></textarea>' +
+					'<textarea id="textTalk" name="talk" cols="25"' + 'rows="3"></textarea>' +
 					'<hr>' +
 
 					'</div>' +
@@ -101,7 +102,32 @@ $(document).ready(function () {
 					'</div>' +
 					'<div class="btChange btn-group test"' + 'role="group">' +
 					'<button type="button" class="btn' + 'btn-default">Update Account</button>' +
-					'</div>');
+					'</div>'
+				);
+
+
+				$('.btnbtn-default').click(function () {
+					var nickName = $("#nickName").val();
+					var birthday = $("#birthday").val();
+					$.ajax({
+						url: '/foodGit/_02_login/password.do',
+						type: 'POST',
+						data: {
+							nickName: nickName,
+							birthday: birthday
+							//討論是否必要修改??
+						},
+						dataType: 'text', //text,json,xml
+						success: function (data) {
+							alert(data);
+							//返回首頁OR顯示訊息??
+
+						}
+
+					});
+	
+				})
+
 			}
 		});
 	});
@@ -121,15 +147,15 @@ $(document).ready(function () {
 			'<div class="locaPassword test">' +
 			'<div class="oldPassword test">' +
 			'<p>舊密碼</p>' +
-			'<input type="text" class="form-control" placeholder="Password" aria-describedby="sizing-addon1" value=' + oldPassword + '>' +
+			'<input type="text" class="opInput form-control" placeholder="Password" aria-describedby="sizing-addon1">' +
 			'</div>' +
-			'<div class="oldPassword test">' +
+			'<div class="newPassword test">' +
 			'<p>新密碼</p>' +
-			'<input type="text"' + 'class="form-control"' + 'placeholder="Password"' + 'aria-describedby="sizing-addon1" >' +
+			'<input type="text"' + 'class="npInput form-control"' + 'placeholder="Password"' + 'aria-describedby="sizing-addon1" >' +
 			'</div>' +
 			'<div class="newPassword test">' +
 			'<p>確認密碼</p>' +
-			'<input type="text"' + 'class="form-control"' + 'placeholder="Password"' + 'aria-describedby="sizing-addon1">' +
+			'<input type="text"' + 'class="NPagain form-control"' + 'placeholder="Password"' + 'aria-describedby="sizing-addon1">' +
 			'</div>' +
 			'<div class="btPasswordChange btn-group' + 'test" role="group">' +
 			'<button type="button" class="btn' + 'btn-default">Change' + 'Password</button>' +
@@ -137,18 +163,36 @@ $(document).ready(function () {
 			'</div>' +
 			'</div>');
 
-		$('.btn').click(function () {
-			$.ajax({
-				url: '/foodGit/_02_login/password.do',
-				type: 'POST',
-				data: {
-					userPassword: oldPassword
-				},
-				dataType: 'json', //text,json,xml
-				success: function (data) {
-					alert(data);
-				}
+
+		$('.btnbtn-default').click(function () {
+			var op = $('.opInput').val();
+			var np = $('.npInput').val();
+			var reNp = $('.NPagain').val();
+			$(".locaPassword").find("input").each(function () {
+				$(this).val("");
 			});
+			if (reNp == np) {
+				alert(op + 'AND' + np);
+				$.ajax({
+					url: '/foodGit/_02_login/password.do',
+					type: 'POST',
+					data: {
+						userAccount: 'hikarumiyasaki@gmail.com',
+						oldPassword: op,
+						newPassword: np
+					},
+					dataType: 'text', //text,json,xml
+					success: function (data) {
+						alert(data);
+						//返回首頁OR顯示訊息??
+
+					}
+
+				});
+			} else {
+				$("p").append("<span style='color:red; font-size: 12px'>密碼錯誤</span>");
+				alert("密碼不一樣");
+			}
 		});
 	});
 

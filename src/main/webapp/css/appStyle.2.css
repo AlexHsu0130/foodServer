@@ -101,6 +101,11 @@ padding-bottom: 25px;
     background: #333;
     color: aliceblue;   
 }
+#textTalk{
+    width: 500px;
+    height: 100px;
+    resize: none;
+}
 /* Manage Photos */
 .mgPhotos{
     width: 700px;

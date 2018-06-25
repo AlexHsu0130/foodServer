@@ -3,7 +3,6 @@
 import java.io.Serializable;
 import java.sql.Blob;
 import java.sql.Clob;
-import java.sql.Date;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -18,7 +17,7 @@ public class MemberBean implements Serializable {
 	private String userAccount;
 	private String userPassword;
 	private String nickName;
-    private Date birthday;
+    private String birthday;
     private Integer gender;
     private Integer userRank;
     private Blob portrait;
@@ -32,7 +31,7 @@ public class MemberBean implements Serializable {
 	}
 
 	public MemberBean(Integer memberId, String userAccount, String userPassword, String nickName,
-			Date birthday, Integer gender, Integer userRank, Blob portrait, String preference, Clob collection,
+			String birthday, Integer gender, Integer userRank, Blob portrait, String preference, Clob collection,
 			Clob userGift, Clob userFriends) {
 		super();
 		this.memberId = memberId;
@@ -82,11 +81,11 @@ public class MemberBean implements Serializable {
 		this.nickName = nickName;
 	}
 
-	public Date getBirthday() {
+	public String getBirthday() {
 		return birthday;
 	}
 
-	public void setBirthday(Date birthday) {
+	public void setBirthday(String birthday) {
 		this.birthday = birthday;
 	}
 

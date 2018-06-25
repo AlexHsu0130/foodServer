@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?> 
 <Context displayName="jspExercise" docBase="jspExercise" path="/jspExercise" reloadable="true">
   <!--                     MySQL                   -->
-  <Resource name="jdbc/member" type="javax.sql.DataSource"
+  <Resource name="jdbc/memberbean" type="javax.sql.DataSource"
       username="root" password="0130"
       driverClassName="com.mysql.jdbc.Driver"
       url="jdbc:mysql://localhost:3306/SpringJDBC?useUnicode=true&amp;characterEncoding=utf8"

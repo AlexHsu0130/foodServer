@@ -47,7 +47,7 @@ public class MemberDaoImpl implements MemberDao {
 	public int updateMemberDate(MemberBean mb) {
 		int n = 0;
 		Session session = factory.getCurrentSession();
-		session.update(mb);
+		session.update(mb);;
 		n++;
 		return n;
 	}
@@ -83,22 +83,28 @@ public class MemberDaoImpl implements MemberDao {
 		return mb;
 	}
 	
+	
 	// 檢查使用者在登入時輸入的帳號與密碼是否正確。如果正確，傳回該帳號所對應的MemberBean物件，
 		// 否則傳回 null。
 		@Override
-		public MemberBean checkACPassword(String userPassword) {
-			MemberBean mb = null;
-			String hql = "FROM MemberBean m WHERE m.userPassword = :pswd";
+		public MemberBean checkACPassword(String userAccount, String userPassword) {
+			System.out.println("userAccount" + userAccount);
+			System.out.println("oldPassword" + userPassword);
+			MemberBean memb = null;
+			String hql = "FROM MemberBean m WHERE m.userAccount = :ac and m.userPassword = :pswd";
 			Session session = getSession();
+			Query query = session.createQuery(hql);
+			query = query.setParameter("ac", userAccount)
+		             .setParameter("pswd", userPassword);
 			try {
-				mb = (MemberBean) session.createQuery(hql)
-				             .setParameter("pswd", userPassword)
-				             .getSingleResult();
+				memb = (MemberBean) query.getSingleResult();
 			} catch(NoResultException ex) {
-				mb = null;
+				ex.printStackTrace();
+				memb = null;
 			}
-			return mb;
+			return memb;
 		}
+		
 
 	private Session getSession() {
         return factory.getCurrentSession();

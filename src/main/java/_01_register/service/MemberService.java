@@ -16,5 +16,5 @@ public interface MemberService {
 
 	MemberBean getUserDateNoPortrait(String userAccount);
 	
-	MemberBean checkACPassword(String userPassword);
+	MemberBean checkACPassword(String userAccount, String userPassword);
 }
